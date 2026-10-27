@@ -59,12 +59,19 @@
     }
     .hero-copy {
       position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding-top: 0.25rem;
+    }
+    .hero-copy-body {
+      position: relative;
       isolation: isolate;
       display: flex;
       align-items: flex-start;
+      width: 100%;
       overflow: hidden;
       min-height: 18rem;
-      padding-top: 0.25rem;
     }
     .hero-copy-photo {
       position: absolute;
@@ -87,6 +94,9 @@
       text-align: left;
     }
     .hero-kicker {
+      position: relative;
+      z-index: 2;
+      margin-bottom: 0.75rem;
       font-size: clamp(0.65rem, 0.8vw + 0.5rem, 0.875rem);
     }
     .hero-title {
@@ -112,9 +122,10 @@
     }
     @media (min-width: 768px) {
       .hero-copy {
-        align-items: center;
-        min-height: 32rem;
         padding-top: 0;
+      }
+      .hero-copy-body {
+        min-height: 32rem;
       }
       .hero-copy-photo {
         right: 0;
@@ -199,13 +210,13 @@
       
       <!-- Top Title & Candidate Introduction -->
       <div class="hero-copy mb-10">
-        <img src="img/hwang.png" alt="" class="hero-copy-photo" />
-        <div class="hero-copy-text space-y-3">
         <div class="hero-kicker inline-flex items-center gap-2 bg-blue-100/80 border border-blue-200 px-3 py-1 sm:px-4 sm:py-1.5 rounded-full font-bold text-brand-primary">
           <span class="w-2 h-2 rounded-full bg-brand-primary animate-pulse"></span>
           국가 안전을 선도하는 1,400 소방기술사의 새로운 미래
         </div>
-
+        <div class="hero-copy-body">
+        <img src="img/hwang.png" alt="" class="hero-copy-photo" />
+        <div class="hero-copy-text space-y-3">
         <h1 class="hero-title font-black text-brand-navy tracking-tight">
           소방기술사의 <span class="text-brand-primary underline decoration-sky-300 underline-offset-4 sm:underline-offset-8">정당한 위상과 권익</span>,<br class="hidden sm:inline" />
           검증된 실천력으로 반드시 바로 세우겠습니다!
@@ -229,6 +240,7 @@
           <span class="hero-chip bg-white border border-slate-200 rounded-full font-bold text-slate-700 shadow-sm flex items-center gap-1.5">
             <i class="fa-solid fa-book-open text-sky-600"></i> 실무멘토링·시니어복지
           </span>
+        </div>
         </div>
         </div>
       </div>
